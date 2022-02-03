@@ -3,7 +3,6 @@ class UsersController < ApplicationController
     # wrap_paramaters: :user, include: [:username, :email, :password, :password_confirmation] 
 
     def create #signup
-        # byebug
           user = User.create(user_params)
           # byebug
           if user.valid?

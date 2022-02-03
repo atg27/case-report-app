@@ -3,6 +3,7 @@ import './cases.css'
 import CaseEditForm from './CaseEditForm'
 import { Button } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
+import { useParams } from 'react-router-dom';
 
 
 
@@ -11,13 +12,14 @@ import EditIcon from '@mui/icons-material/Edit';
     const [caseCard, setCaseCard] = useState({})
     const [errors, setErrors ] = useState('')
     const [formFlag, setFormFlag] = useState(false) 
+    const { id } = useParams()
 
     const switchFormFlag = () => {
         formFlag ? setFormFlag(false) : setFormFlag(true)
     }
 
     useEffect(() => {
-        fetch(`/cases/${props.match.params.id}`)
+        fetch(`/cases/${Number(id)}`)
         .then(r => r.json())
         .then(data =>{
                 if (data.error) {

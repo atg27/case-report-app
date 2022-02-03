@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_11_30_213742) do
     t.string "image"
     t.string "caption"
     t.bigint "user_id", null: false
-    t.bigint "subject_id", null: false
+    t.bigint "subject_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["subject_id"], name: "index_cases_on_subject_id"

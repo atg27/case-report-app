@@ -47,7 +47,6 @@ function App() {
     } 
     else {
       setErrors(user.errors)
-      
     }
   } 
 
